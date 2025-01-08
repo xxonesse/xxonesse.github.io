@@ -14,7 +14,7 @@ let object;
 
 let controls;
 
-let objToRender = "scibe";
+let objToRender = 'scifiCube_test';
 
 const loader = new GLTFLoader();
 
@@ -25,12 +25,12 @@ loader.load (
         object = gltf.scene;
         scene.add(object);
     },
-    funciton (xhr) {
+    function (xhr) {
         console.log((xhr.loaded / xhr.total * 100) + '% loaded');
     },
     function (error) {
         console.error(error);
-    };
+    }
 );
 
 const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -38,24 +38,24 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 document.getElementById("container3d").appendChild(renderer.domElement);
 
-camera.position.z = objToRender === "dino" ? 25 : 500;
+camera.position.z = objToRender === "scifiCube_test" ? 25 : 500;
 
 const topLight = new THREE.DirectionalLight(0xffffff, 1); 
 topLight.position.set(500, 500, 500),
 topLight.castShadow = true;
 scene.add(topLight);
 
-const ambientLight = new THREE.Ambientlight(0x333333, objToRender === "dino" ? 5 : 1);
+const ambientLight = new THREE.Ambientlight(0x333333, objToRender === "scifiCube_test" ? 5 : 1);
 scene.add(ambientLight);
 
-if (objToRender === "dino") {
+if (objToRender === "scifiCube_test") {
     controls = new OrbitControls(camera, renderer.domElement);
 }
 
 function animate() {
     requestAnimationFrame(animate);
 
-    if (object && objToRender === "scibe") {
+    if (object && objToRender === "scifiCube_test") {
         object.rotation.y = -3 + mouseX / window.innerWidth * 3;
         object.rotation.x = -1.2 + mouseY * 2.5 / w.innerHeight;
     }
