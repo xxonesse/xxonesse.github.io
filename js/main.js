@@ -4,7 +4,7 @@
   const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
   const renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth, window.innerHeight);
-  document.getElementById('three-container').appendChild(renderer.domElement);
+  document.getElementById('container3d').appendChild(renderer.domElement);
 
   // Add a light source
   const light = new THREE.AmbientLight(0x404040); // Ambient light
