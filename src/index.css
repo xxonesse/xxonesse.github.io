@@ -1,0 +1,32 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    cursor: cell;
+    color: #fff;
+  }
+  
+  /* StarsBackground */
+  @keyframes twinkle {
+    0% { opacity: 0.2; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.2; }
+  }
+  
+  .stars-container {
+    position: fixed;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+  }
+  
+  .star {
+    position: absolute;
+    background: rgba(255, 255, 239, 0.773);
+    border-radius: 50%;
+    animation: twinkle 5s infinite alternate ease-in-out;
+  }
